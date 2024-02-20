@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-
     public float moveSpeed;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +21,6 @@ public class EnemyController : MonoBehaviour
         if(collision.gameObject.tag == "leftWall" || collision.gameObject.tag == "rightWall") {
             transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0);
             moveSpeed *= -1;
-        
         } 
         
     }

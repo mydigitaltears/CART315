@@ -10,6 +10,7 @@ TagManager:
   - topWall
   - enemy1
   - enemy2
+  - bottomWall
   layers:
   - Default
   - TransparentFX
