@@ -11,6 +11,9 @@ TagManager:
   - enemy1
   - enemy2
   - bottomWall
+  - flower1
+  - flower2
+  - flower3
   layers:
   - Default
   - TransparentFX

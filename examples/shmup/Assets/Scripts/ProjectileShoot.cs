@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileShoot : MonoBehaviour
 {
     //refrence to prefab
-
+    public AudioSource shootSound;
     public GameObject projectilePrefab;
 
      public KeyCode spaceButton;
@@ -21,6 +21,7 @@ public class ProjectileShoot : MonoBehaviour
     {
         if(Input.GetKeyDown(spaceButton)) {
             Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            shootSound.Play(0);
         }
     }
 }

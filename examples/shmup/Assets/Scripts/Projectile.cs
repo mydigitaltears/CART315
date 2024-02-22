@@ -6,8 +6,6 @@ public class Projectile : MonoBehaviour
 {
 
     public float moveSpeed;
-    public GameObject enemy1d;
-    public GameObject enemy2d;
     
     private PointManager pointManager;
    
@@ -25,14 +23,12 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "enemy1"){
-            Instantiate(enemy1d, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             pointManager.UpdateScore(50);
             Destroy(gameObject);
         }
 
-      if(collision.gameObject.tag == "enemy2"){
-            Instantiate(enemy2d, transform.position, Quaternion.identity);
+        if(collision.gameObject.tag == "enemy2"){
             Destroy(collision.gameObject);
             pointManager.UpdateScore(50);
             Destroy(gameObject);
