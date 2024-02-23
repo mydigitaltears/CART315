@@ -34,6 +34,13 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if(collision.gameObject.tag == "gnome"){
+                    Destroy(collision.gameObject);
+                    pointManager.DecreaseScore(200);
+                    Destroy(gameObject);
+                }
+
+
         if(collision.gameObject.tag == "topWall"){
             Destroy(gameObject);
         }

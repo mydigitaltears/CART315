@@ -24,7 +24,7 @@ public class PlayerLives : MonoBehaviour
         lifeText.text = lives.ToString();
         if (lives <= 0){
            Debug.Log("GameOver");
-           SceneManager.LoadScene("GameOver");
+           
         }
     }
         
@@ -40,6 +40,10 @@ public class PlayerLives : MonoBehaviour
         UpdateLives();
 
         Destroy(collision.gameObject);
+      }
+
+      if (collision.gameObject.tag == "boss"){
+        SceneManager.LoadScene("GameOver");
       }
     }
 }

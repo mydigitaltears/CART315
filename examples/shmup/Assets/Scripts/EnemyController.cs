@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed;
     public GameObject enemy1;
     public GameObject enemy2;
+    public GameObject gnome;
     public int rows, columns;
 
     public float enemySpacing_h;
@@ -16,16 +17,22 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        moveSpeed = 5;
         for(int i = 1; i < columns+1; i++){
             for(int j = 0; j < rows; j++){
+
                 float coinFlip = Random.Range(0,2);
+
+
                 float xPos = Mathf.Lerp(-columns*enemySpacing_h, columns*enemySpacing_h, ((float)i/((float)columns+1)));
                 float yPos = (this.transform.position.y + rows) - (j * enemySpacing_v);
                 Debug.Log(coinFlip);
-                if (coinFlip >= 0.5){
-                    Instantiate(enemy1, new Vector3(xPos, yPos, 0f), Quaternion.identity, this.transform);
+                if (coinFlip < 0.2f){
+                    Instantiate(gnome, new Vector3(xPos, yPos, 0f), Quaternion.identity, this.transform);
                 }
-                else {
+                else if (coinFlip < 0.5f) {
+                    Instantiate(enemy1, new Vector3(xPos, yPos, 0f), Quaternion.identity, this.transform);
+                } else {
                     Instantiate(enemy2, new Vector3(xPos, yPos, 0f), Quaternion.identity, this.transform);
                 }
             }

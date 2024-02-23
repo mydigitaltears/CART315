@@ -9,6 +9,7 @@ public class PointManager : MonoBehaviour
     public int score;
     public TMP_Text scoreText;
     public GameObject enemies;
+    public GameObject boss;
 
     private int waves = 1;
     private int lastScore = 0;
@@ -28,12 +29,22 @@ public class PointManager : MonoBehaviour
         }
         if (score == 200*waves + lastScore){
             waves += 1;
+            enemies.GetComponent<EnemyController>().moveSpeed += 2;
             lastScore = score;
             SpawnEnemies(enemies, 4, waves);
+        }
+        if (score == 3000){
+            Instantiate(boss, new Vector3(0f, 5f, 0f), Quaternion.identity);
+            Debug.Log("boss spawns");
         }
         if (score >= 5000){
             SceneManager.LoadScene("GameWin");
         }
+    }
+
+        public void DecreaseScore(int points)
+    {
+        UpdateScore(-points); // Decrease the score by subtracting the points
     }
 
     public void SpawnEnemies(GameObject enemies, int columns, int rows){
