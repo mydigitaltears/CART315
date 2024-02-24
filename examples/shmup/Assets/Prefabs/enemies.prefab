@@ -46,14 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09783787f61ea466ba9e22e94150fc4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 41
   enemy1: {fileID: 5364900609466848145, guid: 60428084e8a8c43e0b0a164a42a6987f, type: 3}
   enemy2: {fileID: 6225726067180829566, guid: da080056c61964b9ca73fb9adf6dc4a3, type: 3}
   gnome: {fileID: 713640866935262260, guid: 0121b3a8ec0d94f6b90a929796a3d0b2, type: 3}
-  rows: 1
+  rows: 19
   columns: 4
   enemySpacing_h: 1.2
   enemySpacing_v: 1.5
+  enemyNb: 0
 --- !u!61 &3638434861302602591
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -15,6 +15,7 @@ TagManager:
   - flower2
   - flower3
   - gnome
+  - gnomeDead
   layers:
   - Default
   - TransparentFX

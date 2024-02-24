@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
                     Destroy(collision.gameObject);
                     pointManager.DecreaseScore(200);
                     Destroy(gameObject);
-                }
+        }
 
 
         if(collision.gameObject.tag == "topWall"){
